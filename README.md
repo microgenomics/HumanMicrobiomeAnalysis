@@ -15,4 +15,5 @@ Before attempting to run the app, make sure that the following required packages
 - phyloseq
 - plyr
 
-The Phyloseq package should be downloaded from bioconductor following the instructions given at: https://bioconductor.org/packages/release/bioc/html/phyloseq.html. All other packages can be downloaded using the R command: install.packages(<i>nameofthepackage</i>)
+The Phyloseq package should be downloaded from bioconductor following the instructions given at: https://bioconductor.org/packages/release/bioc/html/phyloseq.html. 
+All other packages can be downloaded using the R command: install.packages(<i>nameofthepackage</i>)
