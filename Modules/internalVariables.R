@@ -12,10 +12,10 @@ droc["Depth of Sequencing"]<-gsub("A", "", as.matrix(droc["Depth of Sequencing"]
 
 #clean D character from dominance
 droc["Dominance"]<-gsub("D", "", as.matrix(droc["Dominance"]))
-droc["Dominance"]<-replace(droc["Dominance"],droc["Dominance"]==1,"1 species takes 50% of reads")
-droc["Dominance"]<-replace(droc["Dominance"],droc["Dominance"]==10,"10% of species takes 25% of reads")
-droc["Dominance"]<-replace(droc["Dominance"],droc["Dominance"]==50,"50% of species takes 80% of reads")
-droc["Dominance"]<-replace(droc["Dominance"],droc["Dominance"]==100,"all species have equal read abudance")
+droc["Dominance"]<-replace(droc["Dominance"],droc["Dominance"]==1,"1 species represented in 50% of reads (infection)")
+droc["Dominance"]<-replace(droc["Dominance"],droc["Dominance"]==10,"10% of species represented in 25% of reads")
+droc["Dominance"]<-replace(droc["Dominance"],droc["Dominance"]==50,"50% of species represented in 80% of reads")
+droc["Dominance"]<-replace(droc["Dominance"],droc["Dominance"]==100,"all species have equal read abudance (Null Hypothesis)")
 
 #clean R reads
 droc["Read Length"]<-gsub("R", "", as.matrix(droc["Read Length"]))
@@ -28,10 +28,10 @@ colnames(drms)[5]<-"Depth of Sequencing"
 drms["Depth of Sequencing"]<-gsub("A", "", as.matrix(drms["Depth of Sequencing"]))
 #clean D character from dominance
 drms["Dominance"]<-gsub("D", "", as.matrix(drms["Dominance"]))
-drms["Dominance"]<-replace(drms["Dominance"],drms["Dominance"]==1,"1 species takes 50% of reads")
-drms["Dominance"]<-replace(drms["Dominance"],drms["Dominance"]==10,"10% of species takes 25% of reads")
-drms["Dominance"]<-replace(drms["Dominance"],drms["Dominance"]==50,"50% of species takes 80% of reads")
-drms["Dominance"]<-replace(drms["Dominance"],drms["Dominance"]==100,"all species have equal read abudance")
+drms["Dominance"]<-replace(drms["Dominance"],drms["Dominance"]==1,"1 species represented in 50% of reads (infection)")
+drms["Dominance"]<-replace(drms["Dominance"],drms["Dominance"]==10,"10% of species represented in 25% of reads")
+drms["Dominance"]<-replace(drms["Dominance"],drms["Dominance"]==50,"50% of species represented in 80% of reads")
+drms["Dominance"]<-replace(drms["Dominance"],drms["Dominance"]==100,"all species have equal read abudance (Null Hypothesis)")
 drms["Dominance"]<- unlist(drms["Dominance"])
 #clean R character from read.length
 drms["Read Length"]<-gsub("R", "", as.matrix(drms["Read Length"]))
@@ -55,10 +55,10 @@ dm["Depth of Sequencing"]<- unlist(dm["Depth of Sequencing"])
 dm["Read.Length"]<-gsub("R", "", as.matrix(dm["Read.Length"]))
 
 dm["Dominance"]<-gsub("D", "", as.matrix(dm["Dominance"]))
-dm["Dominance"]<-replace(dm["Dominance"],dm["Dominance"]==1,"1 species takes 50% of reads")
-dm["Dominance"]<-replace(dm["Dominance"],dm["Dominance"]==10,"10% of species takes 25% of reads")
-dm["Dominance"]<-replace(dm["Dominance"],dm["Dominance"]==50,"50% of species takes 80% of reads")
-dm["Dominance"]<-replace(dm["Dominance"],dm["Dominance"]==100,"all species have equal read abudance")
+dm["Dominance"]<-replace(dm["Dominance"],dm["Dominance"]==1,"1 species represented in 50% of reads (infection)")
+dm["Dominance"]<-replace(dm["Dominance"],dm["Dominance"]==10,"10% of species represented in 25% of reads")
+dm["Dominance"]<-replace(dm["Dominance"],dm["Dominance"]==50,"50% of species represented in 80% of reads")
+dm["Dominance"]<-replace(dm["Dominance"],dm["Dominance"]==100,"all species have equal read abudance (Null Hypothesis)")
 dm["Dominance"]<- unlist(dm["Dominance"])
 
 dm<-subset(dm,!grepl("Sigma",dm$Software)) #no Sigma
@@ -81,10 +81,10 @@ dmo["Depth of Sequencing"]<- unlist(dmo["Depth of Sequencing"])
 dmo["Read.Length"]<-gsub("R", "", as.matrix(dmo["Read.Length"]))
 
 dmo["Dominance"]<-gsub("D", "", as.matrix(dmo["Dominance"]))
-dmo["Dominance"]<-replace(dmo["Dominance"],dmo["Dominance"]==1,"1 species takes 50% of reads")
-dmo["Dominance"]<-replace(dmo["Dominance"],dmo["Dominance"]==10,"10% of species takes 25% of reads")
-dmo["Dominance"]<-replace(dmo["Dominance"],dmo["Dominance"]==50,"50% of species takes 80% of reads")
-dmo["Dominance"]<-replace(dmo["Dominance"],dmo["Dominance"]==100,"all species have equal read abudance")
+dmo["Dominance"]<-replace(dmo["Dominance"],dmo["Dominance"]==1,"1 species represented in 50% of reads (infection)")
+dmo["Dominance"]<-replace(dmo["Dominance"],dmo["Dominance"]==10,"10% of species represented in 25% of reads")
+dmo["Dominance"]<-replace(dmo["Dominance"],dmo["Dominance"]==50,"50% of species represented in 80% of reads")
+dmo["Dominance"]<-replace(dmo["Dominance"],dmo["Dominance"]==100,"all species have equal read abudance (Null Hypothesis)")
 dmo["Dominance"]<- unlist(dmo["Dominance"])
 
 bacillus<-dm[,c("Organism","Species","Depth of Sequencing","Dominance","Read.Length",
@@ -143,10 +143,10 @@ metadata["Species"]<-gsub("S", "", as.matrix(metadata["Species"]))
 metadata["Depth of Sequencing"]<-gsub("A", "", as.matrix(metadata["Depth of Sequencing"]))
 #clean D character from dominance
 metadata["Dominance"]<-gsub("D", "", as.matrix(metadata["Dominance"]))
-metadata["Dominance"]<-replace(metadata["Dominance"],metadata["Dominance"]==1,"1 species takes 50% of reads")
-metadata["Dominance"]<-replace(metadata["Dominance"],metadata["Dominance"]==10,"10% of species takes 25% of reads")
-metadata["Dominance"]<-replace(metadata["Dominance"],metadata["Dominance"]==50,"50% of species takes 80% of reads")
-metadata["Dominance"]<-replace(metadata["Dominance"],metadata["Dominance"]==100,"all species have equal read abudance")
+metadata["Dominance"]<-replace(metadata["Dominance"],metadata["Dominance"]==1,"1 species represented in 50% of reads (infection)")
+metadata["Dominance"]<-replace(metadata["Dominance"],metadata["Dominance"]==10,"10% of species represented in 25% of reads")
+metadata["Dominance"]<-replace(metadata["Dominance"],metadata["Dominance"]==50,"50% of species represented in 80% of reads")
+metadata["Dominance"]<-replace(metadata["Dominance"],metadata["Dominance"]==100,"all species have equal read abudance (Null Hypothesis)")
 metadata["Dominance"]<- unlist(metadata["Dominance"])
 #clean R character from read.length
 metadata["Read Length"]<-gsub("R", "", as.matrix(metadata["Read Length"]))
@@ -175,10 +175,10 @@ dom2num<-function(x){
   dom<-c()
   for(key in x){
     switch(key,
-           `1 species takes 50% of reads`={dom<-c(dom,1)},
-           `10% of species takes 25% of reads`={dom<-c(dom,10)},
-           `50% of species takes 80% of reads`={dom<-c(dom,50)},
-           `all species have equal read abudance`={dom<-c(dom,100)}
+           `1 species represented in 50% of reads (infection)`={dom<-c(dom,1)},
+           `10% of species represented in 25% of reads`={dom<-c(dom,10)},
+           `50% of species represented in 80% of reads`={dom<-c(dom,50)},
+           `all species have equal read abudance (Null Hypothesis)`={dom<-c(dom,100)}
     )
   }
   return(dom)
@@ -191,4 +191,4 @@ ds<-unique(droc$`Depth of Sequencing`)
 dom<-unique(droc$Dominance)
 rl<-unique(droc$`Read Length`)
 sf<-unique(droc$Software)
-fixedcolors<-c("Centrifuge"="#F8766D","Constrains"="#CD9600","Kraken"="#7CAE00","MetaMix"="#00BE67","MetaPhlan2"="#00BFC4","PathoScope2"="#00A9FF","Sigma"="#C77CFF","Taxator"="#FF61CC")
+fixedcolors<-c("Centrifuge"="#ff2600","Kraken"="#ffbf00","Constrains"="#a6ff00","MetaPhlan2"="#00ff4d","MetaMix*"="#03fbff","PathoScope2"="#0379ff","Sigma"="#e204ff","Taxator-tk"="#ff049b")

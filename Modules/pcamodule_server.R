@@ -44,8 +44,9 @@ PCAMSERVER<- function(input, output, session){
         otumat<-cbind(otumat,subotumat)
       }
     }
+
+    sample$Software <- factor(sample$Software, levels=names(fixedcolors))
     
-    otumat    
     OTU = otu_table(otumat, taxa_are_rows = TRUE)
     TAX = tax_table(taxmat)
     physeq = phyloseq(OTU, TAX, sample_data(sample))
@@ -57,14 +58,14 @@ PCAMSERVER<- function(input, output, session){
     phydist<-distance(physeq,"jaccard")
     phyord<-ordinate(physeq, "MDS", distance = phydist)
     pcavariables$plot <- plot_ordination(physeq, phyord, color="Dominance" ,shape = "Value") +
-      theme_bw() +
       geom_point(size=5) +
       ggtitle("Jaccard Index\n") +
       theme(plot.title = element_text(colour = "darkred",size=16,face = "bold",hjust = 0.5),
             axis.title.x = element_text(colour = "darkred", size=15,face = "bold"),
             axis.title.y = element_text(colour = "darkred", size=15,face = "bold"),
-            legend.title = element_text(colour = "darkred", size=15,face = "bold")) + 
-      facet_wrap(~ Software) + 
+            legend.title = element_text(colour = "darkred", size=15,face = "bold")) +
+      labs(color="Dominance scenario") + 
+      facet_wrap(~ Software,) + 
       theme(strip.text.x = element_text(colour="darkred",face="bold",size=15))
     
     pcavariables$plot
@@ -74,7 +75,6 @@ PCAMSERVER<- function(input, output, session){
                                  input$DeepSpca,"ReadL",input$ReadLpca,"-",
                                  Sys.Date(),".pdf",sep="")},
     content = function(file) {
-
       ggsave(file,plot=pcavariables$plot,device = "pdf",width = 10,height = 8)
     }
   )

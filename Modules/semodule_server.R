@@ -25,7 +25,7 @@ output$RRMSEplot <- renderPlot({
           legend.title = element_text(colour = "darkred", size=15,face = "bold"))+ 
     scale_colour_manual(values = fixedcolors) +
     scale_size_discrete(labels=c("100000"="100 k","1000000"="1 M","10000000"="10 M")) +
-    labs(size="Depth of Sequencing") +
+    labs(size="Sequencing depth", shape="Number of spcies in dataset") +
     facet_wrap(~ Dominance) + theme(strip.text.x = element_text(colour="darkred",face="bold",size=15))
   sevariables$plotxdom
   
@@ -35,14 +35,15 @@ output$RRMSExsoft <- renderPlot({
     return()
   }
   sevariables$plotxsof <- ggplot(data=reactSampleRMS(), aes(x=Method, y=RRMSE, color=Dominance, shape=Species)) + 
-    geom_jitter(aes(size=`Depth of Sequencing`)) + ylim(input$Xlimit) + theme_minimal() +
+    geom_jitter(aes(size=`Depth of Sequencing`)) + ylim(input$Xlimit) +
     ggtitle("\nError according to Software\n") + xlab("\nMethod") + ylab("RRMSE\n") +
     theme(plot.title = element_text(colour = "darkred",size=15,face = "bold", hjust = 0.5),
           axis.title.x = element_text(colour = "darkred", size=15,face = "bold"),
           axis.title.y = element_text(colour = "darkred", size=15,face = "bold"),
           legend.title = element_text(colour = "darkred", size=15,face = "bold")) +
+    scale_x_discrete(limits=names(fixedcolors)) +
     scale_size_discrete(labels=c("100000"="100 k","1000000"="1 M","10000000"="10 M")) +
-    labs(size="Depth of Sequencing")
+    labs(size="Sequencing depth", color="Dominance scenario", shape="Number of species in dataset")
   sevariables$plotxsof
   
 })
