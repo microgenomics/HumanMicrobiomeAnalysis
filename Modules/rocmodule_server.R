@@ -27,7 +27,7 @@ output$ROCplot <- renderPlot({
     scale_shape(solid = FALSE) +
     geom_point(aes(size=`Depth of Sequencing`)) +
     ggtitle("Number of Species in dataset") + xlab("\n1-Specificity") + ylab("Sensitivity\n") +
-    ylim(input$Ylimit) + labs(shape = "Dominance scenario") +
+    ylim(input$Ylimit) + xlim(input$Xlimit) + labs(shape = "Dominance scenario") +
     
     theme(plot.title = element_text(colour = "darkred",size=14,face = "bold",hjust = 0.5),
           axis.title.x = element_text(colour = "darkred", size=14,face = "bold"),

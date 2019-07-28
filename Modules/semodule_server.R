@@ -15,9 +15,9 @@ reactSampleRMS <- reactive({
 })
 output$RRMSEplot <- renderPlot({
   sevariables$plotxdom <- ggplot(data = reactSampleRMS(), aes(x=RRMSE, y=AVGRE, color=Method, shape=Species)) +
-    scale_shape(solid = FALSE) + theme_minimal() +
+    scale_shape(solid = FALSE) +
     geom_point(aes(size=`Depth of Sequencing`)) +
-    xlim(input$Xlimit) + ylim(0,2) +
+    xlim(input$Xlimitse) + ylim(input$Ylimitse) +
     ggtitle("Error according to dominance\n") + xlab("\nRRMSE") + ylab("AVGRE\n") +
     theme(plot.title = element_text(colour = "darkred",size=15,face = "bold",hjust = 0.5),
           axis.title.x = element_text(colour = "darkred", size=15,face = "bold"),
@@ -35,7 +35,7 @@ output$RRMSExsoft <- renderPlot({
     return()
   }
   sevariables$plotxsof <- ggplot(data=reactSampleRMS(), aes(x=Method, y=RRMSE, color=Dominance, shape=Species)) + 
-    geom_jitter(aes(size=`Depth of Sequencing`)) + ylim(input$Xlimit) +
+    geom_jitter(aes(size=`Depth of Sequencing`)) + ylim(input$Ylimitse) +
     ggtitle("\nError according to Software\n") + xlab("\nMethod") + ylab("RRMSE\n") +
     theme(plot.title = element_text(colour = "darkred",size=15,face = "bold", hjust = 0.5),
           axis.title.x = element_text(colour = "darkred", size=15,face = "bold"),

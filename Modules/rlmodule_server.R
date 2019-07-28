@@ -23,7 +23,7 @@ output$ROCplotrl <- renderPlot({
     scale_shape(solid = FALSE) +
     geom_point(aes(size=`Depth of Sequencing`)) +
     ggtitle("Number of Species in dataset") + xlab("\n1-Specificity") + ylab("Sensitivity\n") +
-    ylim(input$Ylimitrl) +
+    ylim(input$Ylimitrl) + xlim(input$Xlimitrl) +
     scale_fill_manual(values = c("red", "green", "blue"), guide = guide_legend(reverse = TRUE)) +
     scale_size_discrete(labels=c("100000"="100 k","1000000"="1 M","10000000"="10 M")) +
     

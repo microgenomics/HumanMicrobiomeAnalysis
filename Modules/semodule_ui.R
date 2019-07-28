@@ -16,11 +16,11 @@ StandardErrorUI <- function(id) {
 
              checkboxGroupInput(inputId=ns("Softwarerms"), label="Method", choices = sf, selected = sf),
 
-           sliderInput(inputId = ns("Xlimit"),label = "X axis limit", min = 0, max = 2, value = c(0,2) ),
+           sliderInput(inputId = ns("Xlimitse"),label = "X axis limit", min = 0, max = 2, value = c(0,2), step = 0.1),
+           sliderInput(inputId = ns("Ylimitse"),label = "Y axis limit",min = 0, max = 2, value = c(0,2), step=0.1),
+           
            downloadButton(ns('downloadRRMSE'), 'Download Plot 1'),
-           downloadButton(ns('downloadRRMSE2'), 'Download Plot 2'),
-           tags$br(),tags$br(),
-           tags$strong("* MetaMix is not implemented to handle 10M reads")
+           downloadButton(ns('downloadRRMSE2'), 'Download Plot 2')
          ),
          mainPanel(
            plotOutput(ns("RRMSEplot"), width = "900px"),

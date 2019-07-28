@@ -17,11 +17,10 @@ ReadLengthUI <- function(id) {
 
             checkboxGroupInput(inputId=ns("Softwarerl"), label="Method",
                                  choices = sf, selected = sf),
-            
-           sliderInput(inputId = ns("Ylimitrl"), label = "Y axis limit", min = 0, max = 1, value = c(0,1)),
-           downloadButton(ns('downloadROCrl'), 'Download Plot'),
-           tags$br(),tags$br(),
-           tags$strong("* MetaMix is not implemented to handle 10M reads")
+            sliderInput(inputId = ns("Xlimitrl"),label = "X axis limit",min = 0, max = 1, value = c(0,1)),
+            sliderInput(inputId = ns("Ylimitrl"), label = "Y axis limit", min = 0, max = 1, value = c(0,1)),
+           
+           downloadButton(ns('downloadROCrl'), 'Download Plot')
          ),
          
          mainPanel(

@@ -24,11 +24,10 @@ ROCcurveUI <- function(id) {
                
 
                checkboxGroupInput(inputId=ns("Software"), label="Method", choices = sf, selected = sf),
-
-             sliderInput(inputId = ns("Ylimit"),label = "Y axis limit",min = 0, max = 1, value = c(0,1)),
-             downloadButton(ns('downloadROC'), 'Download Plot'),
-             tags$br(),tags$br(),
-             tags$strong("* MetaMix is not implemented to handle 10M reads")
+               sliderInput(inputId = ns("Xlimit"),label = "X axis limit",min = 0, max = 1, value = c(0,1)),
+               sliderInput(inputId = ns("Ylimit"),label = "Y axis limit",min = 0, max = 1, value = c(0,1)),
+             
+            downloadButton(ns('downloadROC'), 'Download Plot')
            ),
            
            mainPanel(

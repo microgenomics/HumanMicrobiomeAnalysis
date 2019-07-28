@@ -20,12 +20,10 @@ PCAUI <- function(id) {
              checkboxGroupInput(inputId=ns("Softwarepca"), label="Method",
                                 choices = sf, selected = sf),
  
-           downloadButton(ns('downloadpca'), 'Download Plot'),
-           tags$br(),tags$br(),
-           tags$strong("* MetaMix is not implemented to handle 10M reads")
+           downloadButton(ns('downloadpca'), 'Download Plot')
          ),
          mainPanel(
            plotOutput(ns("PCAxsoft"),height = "750px", width = "900px")
          )
-)
+  )
 }
