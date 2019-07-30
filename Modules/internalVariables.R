@@ -101,21 +101,21 @@ drallonem<-subset(bacillusOnem,grepl("all",bacillusOnem$Read.Length))
 bacillusOnem<-subset(bacillusOnem,!grepl("all",bacillusOnem$Read.Length)) #no real data
 
 
-bacillus[,"Depth of Sequencing"]<-replace(bacillus[,"Depth of Sequencing"],bacillus[,"Depth of Sequencing"]=="100000","100 K")
-bacillus[,"Depth of Sequencing"]<-replace(bacillus[,"Depth of Sequencing"],bacillus[,"Depth of Sequencing"]=="1000000","1 M")
-bacillus[,"Depth of Sequencing"]<-replace(bacillus[,"Depth of Sequencing"],bacillus[,"Depth of Sequencing"]=="10000000","10 M")
-
-bacillusOnem[,"Depth of Sequencing"]<-replace(bacillusOnem[,"Depth of Sequencing"],bacillusOnem[,"Depth of Sequencing"]=="100000","100 K")
-bacillusOnem[,"Depth of Sequencing"]<-replace(bacillusOnem[,"Depth of Sequencing"],bacillusOnem[,"Depth of Sequencing"]=="1000000","1 M")
-bacillusOnem[,"Depth of Sequencing"]<-replace(bacillusOnem[,"Depth of Sequencing"],bacillusOnem[,"Depth of Sequencing"]=="10000000","10 M")
-
-drall[,"Depth of Sequencing"]<-replace(drall[,"Depth of Sequencing"],drall[,"Depth of Sequencing"]=="100000","100 K")
-drall[,"Depth of Sequencing"]<-replace(drall[,"Depth of Sequencing"],drall[,"Depth of Sequencing"]=="1000000","1 M")
-drall[,"Depth of Sequencing"]<-replace(drall[,"Depth of Sequencing"],drall[,"Depth of Sequencing"]=="10000000","10 M")
-
-drallonem[,"Depth of Sequencing"]<-replace(drallonem[,"Depth of Sequencing"],drallonem[,"Depth of Sequencing"]=="100000","100 K")
-drallonem[,"Depth of Sequencing"]<-replace(drallonem[,"Depth of Sequencing"],drallonem[,"Depth of Sequencing"]=="1000000","1 M")
-drallonem[,"Depth of Sequencing"]<-replace(drallonem[,"Depth of Sequencing"],drallonem[,"Depth of Sequencing"]=="10000000","10 M")
+#bacillus[,"Depth of Sequencing"]<-replace(bacillus[,"Depth of Sequencing"],bacillus[,"Depth of Sequencing"]=="100000","100 K")
+#bacillus[,"Depth of Sequencing"]<-replace(bacillus[,"Depth of Sequencing"],bacillus[,"Depth of Sequencing"]=="1000000","1 M")
+#bacillus[,"Depth of Sequencing"]<-replace(bacillus[,"Depth of Sequencing"],bacillus[,"Depth of Sequencing"]=="10000000","10 M")
+#
+#bacillusOnem[,"Depth of Sequencing"]<-replace(bacillusOnem[,"Depth of Sequencing"],bacillusOnem[,"Depth of Sequencing"]=="100000","100 K")
+#bacillusOnem[,"Depth of Sequencing"]<-replace(bacillusOnem[,"Depth of Sequencing"],bacillusOnem[,"Depth of Sequencing"]=="1000000","1 M")
+#bacillusOnem[,"Depth of Sequencing"]<-replace(bacillusOnem[,"Depth of Sequencing"],bacillusOnem[,"Depth of Sequencing"]=="10000000","10 M")
+#
+#drall[,"Depth of Sequencing"]<-replace(drall[,"Depth of Sequencing"],drall[,"Depth of Sequencing"]=="100000","100 K")
+#drall[,"Depth of Sequencing"]<-replace(drall[,"Depth of Sequencing"],drall[,"Depth of Sequencing"]=="1000000","1 M")
+#drall[,"Depth of Sequencing"]<-replace(drall[,"Depth of Sequencing"],drall[,"Depth of Sequencing"]=="10000000","10 M")
+#
+#drallonem[,"Depth of Sequencing"]<-replace(drallonem[,"Depth of Sequencing"],drallonem[,"Depth of Sequencing"]=="100000","100 K")
+#drallonem[,"Depth of Sequencing"]<-replace(drallonem[,"Depth of Sequencing"],drallonem[,"Depth of Sequencing"]=="1000000","1 M")
+#drallonem[,"Depth of Sequencing"]<-replace(drallonem[,"Depth of Sequencing"],drallonem[,"Depth of Sequencing"]=="10000000","10 M")
 
 drall["Software"] <- "Simulated Value"
 drallonem["Software"] <- "Simulated Value"

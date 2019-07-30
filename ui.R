@@ -6,7 +6,7 @@ source("Modules/rocmodule_ui.R")
 source("Modules/rlmodule_ui.R")
 source("Modules/semodule_ui.R")
 source("Modules/pcamodule_ui.R")
-#source("Modules/gamodule_ui.R")
+source("Modules/gamodule_ui.R")
 source("Modules/timemodule_ui.R")
 #source("Modules/downmodule_ui.R")
 
@@ -17,7 +17,7 @@ shinyUI(fluidPage(theme = shinytheme("paper"),
     ReadLengthUI("rlmodule"),
     StandardErrorUI("semodule"),
     PCAUI("pcamodule"),
-    #GENOMEABSENTUI("gamodule"),
+    GENOMEABSENTUI("gamodule"),
     TimeUI("timemodule")
     #DownloadUI("downloadmodule")
 

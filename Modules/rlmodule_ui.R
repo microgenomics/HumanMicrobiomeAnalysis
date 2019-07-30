@@ -5,7 +5,7 @@ ReadLengthUI <- function(id) {
            
             checkboxGroupInput(inputId=ns("speciesQrl"), label="Number of species in dataset", 
                                 choices = sp,selected = sp[1]),
-            checkboxGroupInput(inputId=ns("DeepSrl"), label="Depth of Sequencing", 
+            checkboxGroupInput(inputId=ns("DeepSrl"), label="Sequencing depth", 
                                  choices = c("100 K"="100000","1 M"="1000000","10 M"="10000000"),
                                selected = "100000"),
 
