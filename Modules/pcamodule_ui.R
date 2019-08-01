@@ -5,14 +5,14 @@ PCAUI <- function(id) {
            selectInput(inputId = ns("ReadLpca"), label = "Read Length",
                        choices = rl, selected = rl[length(rl)]),
            
-             selectInput(inputId = ns("SpeciesQpca"), label="Number of Species",
+             selectInput(inputId = ns("SpeciesQpca"), label="Number of species in dataset",
                          choices = sp, selected = sp[1]),
 
-             selectInput(inputId = ns("DeepSpca"), label = "Depth of Sequencing",
+             selectInput(inputId = ns("DeepSpca"), label = "Sequencing depth",
                          choices = c("100 K"="100000","1 M"="1000000","10 M"="10000000"), 
                          selected = "10000000"),
 
-             checkboxGroupInput(inputId = ns("Dompca"), label = "Dominance",
+             checkboxGroupInput(inputId = ns("Dompca"), label = "Dominance scenario",
                                 choices = dom, selected = c(dom[1],dom[2])),
 
 
@@ -25,5 +25,5 @@ PCAUI <- function(id) {
          mainPanel(
            plotOutput(ns("PCAxsoft"),height = "750px", width = "900px")
          )
-)
+  )
 }

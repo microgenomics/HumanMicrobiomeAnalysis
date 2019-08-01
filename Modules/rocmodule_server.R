@@ -23,19 +23,19 @@ output$ROCplot <- renderPlot({
     return()
   }
   rocvariables$plot<- p <- ggplot(data = reactSampleRoc(), aes(x=FPR, y=TPR, colour=Method, shape=Dominance)) +
-    theme_minimal() +
+
     scale_shape(solid = FALSE) +
     geom_point(aes(size=`Depth of Sequencing`)) +
-    ggtitle("Number of Species") + xlab("\nFalse Positive Rate") + ylab("True Positive Rate\n") +
-    ylim(input$Ylimit) +
+    ggtitle("Number of Species in dataset") + xlab("\n1-Specificity") + ylab("Sensitivity\n") +
+    ylim(input$Ylimit) + xlim(input$Xlimit) + labs(shape = "Dominance scenario") +
     
     theme(plot.title = element_text(colour = "darkred",size=14,face = "bold",hjust = 0.5),
           axis.title.x = element_text(colour = "darkred", size=14,face = "bold"),
           axis.title.y = element_text(colour = "darkred", size=14,face = "bold"),
           legend.title = element_text(colour = "darkred", size=14,face = "bold")) + 
-    scale_colour_manual(values = fixedcolors) +
+    scale_colour_manual(values = fixedcolors,limits=names(fixedcolors)) +
     scale_size_discrete(labels=c("100000"="100 k","1000000"="1 M","10000000"="10 M")) +
-    labs(size="Depth of Sequencing") + facet_wrap(~ Species) + 
+    labs(size="Sequencing Depth") + facet_wrap(~ Species) + 
     theme(strip.text.x = element_text(colour="darkred",face="bold",size=14))
   
   

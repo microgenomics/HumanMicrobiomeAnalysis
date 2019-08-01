@@ -20,10 +20,10 @@ output$ROCplotrl <- renderPlot({
   }
 
   rlvariable$plot<- ggplot(data = reactSampleRocrl(), aes(x=FPR, y=TPR, colour=Method, shape=`Read Length`)) +
-    scale_shape(solid = FALSE) + theme_minimal() +
+    scale_shape(solid = FALSE) +
     geom_point(aes(size=`Depth of Sequencing`)) +
-    ggtitle("Number of Species") + xlab("\nFalse Positive Rate") + ylab("True Positive Rate\n") +
-    ylim(input$Ylimitrl) +
+    ggtitle("Number of Species in dataset") + xlab("\n1-Specificity") + ylab("Sensitivity\n") +
+    ylim(input$Ylimitrl) + xlim(input$Xlimitrl) +
     scale_fill_manual(values = c("red", "green", "blue"), guide = guide_legend(reverse = TRUE)) +
     scale_size_discrete(labels=c("100000"="100 k","1000000"="1 M","10000000"="10 M")) +
     
@@ -31,8 +31,8 @@ output$ROCplotrl <- renderPlot({
           axis.title.x = element_text(colour = "darkred", size=14,face = "bold"),
           axis.title.y = element_text(colour = "darkred", size=14,face = "bold"),
           legend.title = element_text(colour = "darkred", size=14,face = "bold")) + 
-    scale_colour_manual(values = fixedcolors) +
-    labs(shape = "Read Length", size="Depth of Sequencing") + 
+    scale_colour_manual(values = fixedcolors,limits=names(fixedcolors)) +
+    labs(shape = "Read Length", size="Sequencing depth" ) + 
     facet_wrap(~ Species) + theme(strip.text.x = element_text(colour="darkred",face="bold",size=14))
   rlvariable$plot
 })
