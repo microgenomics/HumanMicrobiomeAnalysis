@@ -6,10 +6,9 @@ This is the repository for the simulated data, code, and visualization (Shiny Ap
 
 To download the simulated data, please click on the following links according to the number of species simulated you wish to try:
 
-* Data simulating 10 species from the Human Oral Microbiome Database [here](https://www.dropbox.com/sh/q0cofhwzn9sgq9p/AAD_AVvjAxZ7BgtLHdJFkmHoa?dl=1).
-
-* Data simulating 100 species from the Human Oral Microbiome Database [here](https://www.dropbox.com/sh/g9bu3wn9db9lri7/AACulJZXryp5XchjNZ6dybHea?dl=1).
-* Data simulating 426 species from the Human Oral Microbiome Database [here](https://www.dropbox.com/sh/14hnrspr2u4pfia/AABepBjoYoRbNpTvLyTgzxbKa?dl=1). 
+* Data simulating 10 species from the Human Oral Microbiome Database [here](https://www.dropbox.com/sh/q0cofhwzn9sgq9p/AAD_AVvjAxZ7BgtLHdJFkmHoa?dl=0).
+* Data simulating 100 species from the Human Oral Microbiome Database [here](https://www.dropbox.com/sh/g9bu3wn9db9lri7/AACulJZXryp5XchjNZ6dybHea?dl=0).
+* Data simulating 426 species from the Human Oral Microbiome Database [here](https://www.dropbox.com/sh/14hnrspr2u4pfia/AABepBjoYoRbNpTvLyTgzxbKa?dl=0). 
 
 ### CODE
 
