@@ -1,5 +1,5 @@
 # **Evaluation of Computational Methods for Human Microbiome Analysis Using Simulated Data**
-This is the repository for the simulated data, code, and visualization (Shiny App) presented in the paper <b>Evaluation of Computational Methods for Human Microbiome Analysis Using Simulated Data (not yet published) </b>.  
+This is the repository for the simulated data, code, and visualization (Shiny App) presented in the paper <b>Evaluation of Computational Methods for Human Microbiome Analysis Using Simulated Data [(Miossec <i>et al.</i>, 2020)](https://doi.org/10.7717/peerj.9688)</b>.  
 *Code written by Sandro Valenzuela.*
 
 ### DATA
